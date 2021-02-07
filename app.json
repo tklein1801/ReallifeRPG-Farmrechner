@@ -1,0 +1,12 @@
+{
+  "name": "ReallifeRPG-Farmrechner",
+  "displayName": "ReallifeRPG-Farmrechner",
+  "expo": {
+    "name": "ReallifeRPG-Farmrechner",
+    "slug": "ReallifeRPG-Farmrechner",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
