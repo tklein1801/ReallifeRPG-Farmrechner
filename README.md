@@ -1,5 +1,4 @@
 # ReallifeRPG-Farmrechner
-<img> https://raw.githubusercontent.com/A3ReallifeRPG/RealLifeRPGLauncher/master/resources/img/banner.png <\img>
 
 ## Was macht dieses Tool?
 
