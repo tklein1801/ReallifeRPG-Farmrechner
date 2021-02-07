@@ -1,2 +1,6 @@
 # ReallifeRPG-Farmrechner
-Ein Tool um den Ertrag mit den akutellen Marktpreisen zu errechen anhand der akutellen Inventar größe
+
+Was macht dieses Tool?
+
+Dieses Tool dient dazu mit den akutellen Marktpreisen sich den Ertrag einer Farmroute zu errechnen. 
+
