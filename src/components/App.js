@@ -10,7 +10,7 @@ import {
 
 import Home from './Home';
 import Rechner from './Rechner';
-import Settings from './Settings';
+import Changelog from './Changelog';
 
 const Tab = createBottomTabNavigator();
 
@@ -41,8 +41,8 @@ function App() {
         />
 
         <Tab.Screen
-          name="Einstellungen"
-          component={Settings}
+          name="Changelog"
+          component={Changelog}
         />
 
       </Tab.Navigator>

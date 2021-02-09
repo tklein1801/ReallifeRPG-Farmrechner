@@ -2,13 +2,13 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import styles from '../style/Stylesheet';
 
-const Settings = () => {
+const Changelog = () => {
 return(
     <View style={styles.container}>
-    <Text style={styles.headerTextStyle}>Einstellungen</Text>
+    <Text style={styles.headerTextStyle}>Changelog</Text>
     </View>
 
 )
 }
 
-export default Settings;
+export default Changelog;
