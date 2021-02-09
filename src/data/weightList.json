@@ -1,46 +1,170 @@
 ﻿{
     "weightList": [
         {
-            "diamond_r": 6,
-            "oil_r": 5,
-            "coal_r": 6,
-            "wood_r": 5,
-            "salt_r": 4,
-            "rock_r": 4,
-            "clay_r": 6,
-            "copper_r": 4,
-            "sand_r": 4,
-            "iron_r": 5,
-            "plastic": 10,
-            "steel": 17,
-            "potato": 2,
-            "chocolate_u": 5,
-            "wine_u": 4,
-            "sugar_u": 3,
-            "apple": 2,
-            "barley_u": 4,
-            "wheat_u": 4,
-            "wheat_r": 4,
-            "barley_r": 4,
-            "sugar_r": 3,
-            "wine_r": 4,
-            "bread": 4,
-            "chocolate_r": 5,
-            "roll": 4,
-            "shell_r": 5,
-            "pearl": 5,
-            "tobacco_r": 5,
-            "fish_r": 4,
-            "meat_r": 4,
-            "apple_juice": 2,
-            "honey_r": 3,
-            "crab": 4,
-            "lsd": 18,
-            "cocaine_r": 5,
-            "heroin_r": 5,
-            "rum": 6,
-            "vodka": 5,
-            "weaponparts_r": 5
+            "item": [
+                {
+                    "name": "diamond_r",
+                    "weight": 6
+                },
+                {
+                    "name" : "oil_r",
+                    "weight": 5
+                },
+                {
+                    "name" : "coal_r",
+                    "weight": 6
+                },
+                {
+                    "name" : "wood_r",
+                    "weight": 5
+                },
+                {
+                    "name" : "salt_r",
+                    "weight": 4
+                },
+                {
+                    "name" : "rock_r",
+                    "weight": 4
+                },
+                {
+                    "name" : "clay_r",
+                    "weight": 6
+                },
+                {
+                    "name" : "copper_r",
+                    "weight": 4
+                },
+                {
+                    "name" : "sand_r",
+                    "weight": 4
+                },
+                {
+                    "name" : "iron_r",
+                    "weight": 5
+                },
+                {
+                    "name" : "plastic",
+                    "weight": 10
+                },
+                {
+                    "name" : "steel",
+                    "weight": 17
+                },
+                {
+                    "name" : "potato",
+                    "weight": 2
+                },
+                {
+                    "name" : "chocolate_u",
+                    "weight": 5
+                },
+                {
+                    "name" : "wine_u",
+                    "weight": 4
+                },
+                {
+                    "name" : "sugar_u",
+                    "weight": 3
+                },
+                {
+                    "name" : "apple",
+                    "weight": 2
+                },
+                {
+                    "name" : "barley_u",
+                    "weight": 4
+                },
+                {
+                    "name" : "wheat_u",
+                    "weight": 4
+                },
+                {
+                    "name" : "wheat_r",
+                    "weight": 4
+                },
+                {
+                    "name" : "barley_r",
+                    "weight": 4
+                },
+                {
+                    "name" : "sugar_r",
+                    "weight": 3
+                },
+                {
+                    "name" : "wine_r",
+                    "weight": 4
+                },
+                {
+                    "name" : "bread",
+                    "weight": 4
+                },
+                {
+                    "name" : "chocolate_r",
+                    "weight": 5
+                },
+                {
+                    "name" : "roll",
+                    "weight": 4
+                },
+                {
+                    "name" : "shell_r",
+                    "weight": 5
+                },
+                {
+                    "name" : "pearl",
+                    "weight": 5
+                },
+                {
+                    "name" : "tobacco_r",
+                    "weight": 5
+                },
+                {
+                    "name" : "fish_r",
+                    "weight": 4
+                },
+                {
+                    "name" : "meat_r",
+                    "weight": 4
+                },
+                {
+                    "name" : "apple_juice",
+                    "weight": 2
+                },
+                {
+                    "name" : "honey_r",
+                    "weight": 3
+                },
+                {
+                    "name" : "crab",
+                    "weight": 4
+                },
+                {
+                    "name" : "lsd",
+                    "weight": 18
+                },
+                {
+                    "name" : "cocaine_r",
+                    "weight": 5
+                },
+                {
+                    "name" : "heroin_r",
+                    "weight": 5
+                },
+                {
+                    "name" : "rum",
+                    "weight": 6
+                },
+                {
+                    "name" : "vodka",
+                    "weight": 5
+                },
+                {
+                    "name" : "weaponparts_r",
+                    "weight": 5
+                }
+
+            ]
+            
         }
     ]
 }
