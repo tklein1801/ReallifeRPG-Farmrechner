@@ -1,0 +1,12 @@
+{
+  "changelogs": [
+    {
+      "version": "Beta v0.2",
+      "changes": [
+        "Illegale Farmrouten werden nun mit dem richtigen Multipikator angezeigt",
+        "Design etwas angepasst",
+        "Changelog eingefügt"
+      ]
+    }
+  ]
+}

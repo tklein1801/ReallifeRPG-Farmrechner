@@ -1,0 +1,14 @@
+{
+  "itemBlacklist": ["white_widow", "white_russian", "purple_haze", "fentanyl_r", "fish_feed"],
+  "illegalItems": [
+    "cocaine_r",
+    "heroin_r",
+    "fentanyl_r",
+    "purple_haze",
+    "white_widow",
+    "white_russian",
+    "lsd",
+    "rum",
+    "vodka"
+  ]
+}
