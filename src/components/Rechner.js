@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Text, View, FlatList, TouchableOpacity } from 'react-native';
 import styles from '../style/Stylesheet';
 import weightList from '../data/weightList';
+import multiplierBonus from '../data/multiplierBonus';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
@@ -13,6 +14,7 @@ const Rechner = () => {
     const [bagSize, setBagSize] = useState(0);
     const [carSize, setCarSize] = useState(0);
     const [server, setServer] = useState(0);
+    const [cops, setCopCount] = useState(0);
     const [inv, setInv] = useState(0);
 
     const getData = async () => {
@@ -39,14 +41,27 @@ const Rechner = () => {
 
     function getMarktPreise() {
 
+        fetch('https://api.realliferpg.de/v1/servers', {
+            method: 'GET',
+        })
+            .then((response) => response.json())
+            .then((responseJson) => {
+                setCopCount(responseJson.data[server].Cops)
+            })
+            .catch((error) => {
+                console.log(error + "::: Error Message");
+            });
+
         fetch('https://api.realliferpg.de/v1/market_all', {
             method: 'GET',
         })
             .then((response) => response.json())
             .then((responseJson) => {
                 let blockData = ['white_widow', 'white_russian', 'purple_haze', 'fentanyl_r', 'fish_feed']
+                let illegalItems = ['cocaine_r', 'heroin_r', 'fentanyl_r', 'purple_haze', 'white_widow', 'white_russian', 'lsd', 'rum', 'vodka']
                 let marktArray = [];
                 let itemWeight;
+                let fullPrice;
 
 
                 for (let i = 0; i < 45; i++) {
@@ -54,13 +69,22 @@ const Rechner = () => {
 
                         for (let j = 0; j < 39; j++) {
                             if (weightList.weightList[0].item[j].name == responseJson.data[server].market[i].item) {
-                                itemWeight = weightList.weightList[0].item[j].weight
+
+                                itemWeight = weightList.weightList[0].item[j].weight;
+                            }
+
+                            fullPrice = responseJson.data[server].market[i].price
+
+                            if (illegalItems.includes(responseJson.data[server].market[i].item) == true) {
+
+                                fullPrice = fullPrice * multiplierBonus.multiplierBonus.bonus[cops].multiplier;
+                                fullPrice.toFixed(0)
+
                             }
                         }
 
-
                         marktArray.push({
-                            price: responseJson.data[server].market[i].price,
+                            price: fullPrice,
                             name: responseJson.data[server].market[i].localized,
                             weight: itemWeight,
                             key: i,
@@ -81,10 +105,14 @@ const Rechner = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={{ color: "#fff", marginTop: "3%" }}>Z-Inventar: {parseInt(bagSize)} kg</Text>
-            <Text style={{ color: "#fff", marginTop: "3%" }}>Fahrzeug Inventar: {parseInt(carSize)} kg</Text>
-            <Text style={{ color: "#fff", marginTop: "3%" }}>Ausgewählter Server {parseInt(server) + 1}</Text>
-            <Text style={{ color: "#fff", marginTop: "6%", marginBottom: "2%" }}>Insgesamtes Inventar: {parseInt(carSize) + parseInt(bagSize)} kg</Text>
+            <View style={{ alignItems: 'center', backgroundColor: "#fff", margin: "2%",padding: "2%", borderRadius: 20 }}>
+                <Text style={{ color: "#435a64"}}>Z-Inventar: {parseInt(bagSize)} kg</Text>
+                <Text style={{ color: "#435a64", marginTop: "3%" }}>Fahrzeug Inventar: {parseInt(carSize)} kg</Text>
+                <Text style={{ color: "#435a64", marginTop: "3%" }}>Ausgewählter Server {parseInt(server) + 1}</Text>
+            </View>
+            <View style={{ alignItems: 'center', backgroundColor: "#fff", marginVertical: "1%", paddingHorizontal: "10%", borderRadius: 60 }}>
+                <Text style={{ fontWeight: 'bold',color: "#ff6f00",padding: "3%"}}>Insgesamtes Inventar: {parseInt(carSize) + parseInt(bagSize)} kg</Text>
+            </View>
             <FlatList
                 data={marktArray}
                 keyExtractor={item => item.key}
@@ -99,7 +127,7 @@ const Rechner = () => {
                 }}
             />
             <TouchableOpacity onPress={() => getData()}>
-                <Text style={styles.buttonStyle}>Einstellungen aktualisieren</Text>
+                <Text style={styles.buttonStyle}>Liste aktualisieren</Text>
             </TouchableOpacity>
         </View>
 
